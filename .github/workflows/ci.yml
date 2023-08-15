@@ -1,0 +1,50 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    # 构建环境使用 ubuntu
+    runs-on: ubuntu-latest
+
+    steps:
+      # 将代码拉到虚拟机
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      # 安装nodejs
+      - name: Use Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+
+      # 构建项目
+      - name: Build Project 📦
+        run: |
+          yarn install
+          yarn run build
+
+      # 部署到github指定分支
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          # 部署后提交到的分支
+          branch: gh-pages
+          # 这里填打包好的目录名称
+          folder: 'build'
+
+      - name: SSH Deploy 🖥️
+        uses: easingthemes/ssh-deploy@v2.2.11
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+          ARGS: '-avzr --delete'
+          SOURCE: 'build'
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: 'ubuntu'
+          TARGET: '/home/fontend/blog'
