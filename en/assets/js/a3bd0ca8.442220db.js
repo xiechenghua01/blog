@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkblog=self.webpackChunkblog||[]).push([[98624],{29043:function(s){s.exports=JSON.parse('{"label":"prisma","permalink":"/en/blog/tags/prisma","allTagsPath":"/en/blog/tags","count":1,"unlisted":false}')}}]);

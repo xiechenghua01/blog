@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkblog=self.webpackChunkblog||[]).push([[44551],{72622:function(s){s.exports=JSON.parse('{"label":"supabase","permalink":"/blog/tags/supabase","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkblog=self.webpackChunkblog||[]).push([[72474],{95194:function(e){e.exports=JSON.parse('{"label":"vercel","permalink":"/blog/tags/vercel","allTagsPath":"/blog/tags","count":3,"unlisted":false}')}}]);
