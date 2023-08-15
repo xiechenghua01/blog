@@ -1,5 +1,5 @@
 const path = require('path')
-const beian = '闽ICP备2020017848号-2'
+const beian = '赣ICP备2023007565号-1'
 
 const announcementBarContent = ''
 
@@ -73,7 +73,7 @@ const config = {
               to: 'resource',
             },
             {
-              label:  '友链',
+              label: '友链',
               to: 'friends',
             },
             {
@@ -279,7 +279,7 @@ const config = {
         feedOptions: {
           type: 'all',
           title: '愧怍',
-          copyright: `Copyright © ${new Date().getFullYear()} 愧怍 Built with Docusaurus.<p><a href="http://beian.miit.gov.cn/" class="footer_lin">${beian}</a></p>`,
+          copyright: `Copyright © ${new Date().getUTCFullYear()} 愧怍 Built with Docusaurus.<p><a href="http://beian.miit.gov.cn/" class="footer_lin">${beian}</a></p>`,
         },
       },
     ],
