@@ -39,12 +39,13 @@ jobs:
           # 这里填打包好的目录名称
           folder: 'build'
 
-      - name: SSH Deploy 🖥️
-        uses: easingthemes/ssh-deploy@v2.2.11
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-          ARGS: '-avzr --delete'
-          SOURCE: 'build'
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_USER: 'ubuntu'
-          TARGET: '/home/fontend/blog/'
+      # 部署到服务器
+      #- name: SSH Deploy 🖥️
+      #  uses: easingthemes/ssh-deploy@v2.2.11
+      #  env:
+      #    SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+      #    ARGS: '-avzr --delete'
+      #    SOURCE: 'build'
+      #    REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+      #    REMOTE_USER: 'ubuntu'
+      #    TARGET: '/home/fontend/blog/'
